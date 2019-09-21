@@ -134,8 +134,8 @@ class Bot():
             if parent_comment.author_flair_css_class in ['score-t1','score-t2','score-t3','score-t4','score-t5','score-t6']:
                 #save flair to reddit
                 comment.subreddit.flair.set(redditor=parent_comment.author, text=flair_text, css_class=flair_class)
-            #checks if the length of string isn't 0 and if it is, then the user has no text flair.
-            elif len(parent_comment.author_flair_text) != 0:
+            #checks if the length of string isn't 0 and None, and if it is, then the user has no text flair.
+            elif parent_comment.author_flair_richtext is not None and len(parent_comment.author_flair_text) != 0:
                 pass
             #checks if the array is empty or not.
             elif parent_comment.author_flair_richtext is None or parent_comment.author_flair_richtext == 0:
