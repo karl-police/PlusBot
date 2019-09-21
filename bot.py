@@ -138,7 +138,7 @@ class Bot():
             elif parent_comment.author_flair_text is not None and len(parent_comment.author_flair_text) != 0:
                 pass
             #checks if the array is empty or not.
-            elif parent_comment.author_flair_richtext is None or parent_comment.author_flair_richtext == 0:
+            elif parent_comment.author_flair_richtext is not None and len(parent_comment.author_flair_richtext) != 0:
                 pass
             #checks if there is a css class for the flair.
             elif parent_comment.author_flair_css_class is None or len(parent_comment.author_flair_css_class) == 0:
